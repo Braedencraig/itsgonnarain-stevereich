@@ -22,7 +22,8 @@ function startLoop(audioBuffer, pan = 0, rate = 1) {
     sourceNode.connect(pannerNode)
     pannerNode.connect(audioContext.destination)
 
-    sourceNode.start(0, 3.40)
+    // sourceNode.start(0, 3.40)
+    sourceNode.start()
 }
 
 const fetchAndPlayAudioLoops = async () => {
@@ -69,3 +70,5 @@ window.onload = function() {
         fetchAndPlayAudioLoops()
     })
 }
+
+// In the end  what has been created is a web audio graph with two loops, panned and with phasing.
